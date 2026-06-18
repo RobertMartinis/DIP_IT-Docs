@@ -64,9 +64,9 @@ Example: if `Minimum Consecutive Scans = 5`, a detected region must contain at l
 
 ## Set by base peak intensity
 
-The **Set by base peak intensity** option switches section detection from acquisition-time-based detection to intensity-based detection.
+The **Set by base peak intensity** option switches section detection from injection-time-based detection to intensity-based detection.
 
-When enabled, DIP_IT detects sections using the base peak of the TIC intensity trace. This can be useful if some datasets have a constant injection time.
+When enabled, DIP_IT detects sections using the base peak of the TIC intensity trace. This can be useful if some datasets have a constant injection time across the whole experiment.
 
 !!! note
     To detect sections by base peak intensity, the option **must be enabled** while creating and loading the log file. Otherwise the sections in the log file will be created and loaded with respect to the injection time.
