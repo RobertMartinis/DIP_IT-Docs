@@ -968,8 +968,8 @@
 <p>This helps prevent small noise spikes or isolated scans from being detected as real sections.</p>
 <p>Example: if <code>Minimum Consecutive Scans = 5</code>, a detected region must contain at least 5 consecutive scans to be accepted as a section.</p>
 <h2 id="set-by-base-peak-intensity">Set by base peak intensity</h2>
-<p>The <strong>Set by base peak intensity</strong> option switches section detection from acquisition-time-based detection to intensity-based detection.</p>
-<p>When enabled, DIP_IT detects sections using the base peak of the TIC intensity trace. This can be useful if some datasets have a constant injection time.</p>
+<p>The <strong>Set by base peak intensity</strong> option switches section detection from injection-time-based detection to intensity-based detection.</p>
+<p>When enabled, DIP_IT detects sections using the base peak of the TIC intensity trace. This can be useful if some datasets have a constant injection time across the whole experiment.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To detect sections by base peak intensity, the option <strong>must be enabled</strong> while creating and loading the log file. Otherwise the sections in the log file will be created and loaded with respect to the injection time.</p>
