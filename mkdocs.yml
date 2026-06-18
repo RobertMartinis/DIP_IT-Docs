@@ -1,0 +1,41 @@
+site_name: DIP_IT Documentation
+site_url: https://mydomain.org/mysite
+theme:
+  name: material
+  favicon: img/logo.png
+  features:
+    - navigation.tabs
+  icon:
+    logo: material/duck
+  palette: 
+    - scheme: default
+      primary: cyan
+      toggle:
+        icon: material/lightbulb
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to light mode
+    
+markdown_extensions:
+  - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.blocks.caption
+
+
+nav:
+  - Home: index.md
+  - Getting Started: 
+      Installation: ./getting-started/installation.md
+      Your first experiment: ./getting-started/firstexperiment.md
+  - Documentation of Features and Settings:
+      General Parameters: ./documentation-of-features-and-settings/generalparameters.md
+      Section Definition: ./documentation-of-features-and-settings/sectiondefinition.md
+      Adduct Annotation and Isotopologue Grouping: ./documentation-of-features-and-settings/adduct.md
+      Feature Processing: ./documentation-of-features-and-settings/featureprocessing.md
+      Data Analysis:  ./documentation-of-features-and-settings/dataanalysis.md
