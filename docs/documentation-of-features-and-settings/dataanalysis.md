@@ -379,20 +379,6 @@ A typical analysis workflow is:
 2. Choose the same intensity summary used for export.
 3. Select normalization if needed.
 4. Choose whether to include QC or blanks.
-5. Apply log transform if intensities span a wide range.
-6. Use autoscaling for PCA or heatmap pattern exploration when appropriate.
 7. Select the analysis method.
 8. Press **Show Plot**.
 9. Export results if needed.
-
-## Practical tips
-
-- Use PCA first to inspect global structure and outliers.
-- Include QC samples to check whether QC entries cluster together.
-- Include blanks to verify that blanks separate from samples.
-- Use t-test or volcano plot for two-group comparisons.
-- Use ANOVA for experiments with more than two groups.
-- Use q-values when testing many features.
-- Use heatmaps to visualize patterns among top features.
-- Use correlation heatmaps to inspect features with similar behavior.
-- Avoid overinterpreting supervised or clustered plots without checking the experimental design.
