@@ -1,0 +1,1483 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/mysite/documentation-of-features-and-settings/featureprocessing/">
+      
+      
+        <link rel="prev" href="../adduct/">
+      
+      
+        <link rel="next" href="../dataanalysis/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Feature Processing - DIP_IT Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#feature-processing-panel" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DIP_IT Documentation" class="md-header__button md-logo" aria-label="DIP_IT Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.5 5A1.5 1.5 0 0 0 7 6.5 1.5 1.5 0 0 0 8.5 8 1.5 1.5 0 0 0 10 6.5 1.5 1.5 0 0 0 8.5 5M10 2a5 5 0 0 1 5 5c0 1.7-.85 3.2-2.14 4.1 1.58.15 3.36.51 5.14 1.4 3 1.5 4-.5 4-.5s-1 9-7 9H9s-5 0-5-5c0-3 3-4 2-6-4 0-4-3.5-4-3.5 1 .5 2.24.5 3 .15A5.02 5.02 0 0 1 10 2"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DIP_IT Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Feature Processing
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/installation/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../generalparameters/" class="md-tabs__link">
+          
+  
+  
+  Documentation of Features and Settings
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DIP_IT Documentation" class="md-nav__button md-logo" aria-label="DIP_IT Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.5 5A1.5 1.5 0 0 0 7 6.5 1.5 1.5 0 0 0 8.5 8 1.5 1.5 0 0 0 10 6.5 1.5 1.5 0 0 0 8.5 5M10 2a5 5 0 0 1 5 5c0 1.7-.85 3.2-2.14 4.1 1.58.15 3.36.51 5.14 1.4 3 1.5 4-.5 4-.5s-1 9-7 9H9s-5 0-5-5c0-3 3-4 2-6-4 0-4-3.5-4-3.5 1 .5 2.24.5 3 .15A5.02 5.02 0 0 1 10 2"/></svg>
+
+    </a>
+    DIP_IT Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/firstexperiment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your first experiment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation of Features and Settings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation of Features and Settings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generalparameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sectiondefinition/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Section Definition
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adduct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adduct Annotation and Isotopologue Grouping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Processing
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Feature Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameter overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normalization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internal-standard-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internal standard normalization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blank-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blank filter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample filter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qc-cv-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QC CV filtering
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sn-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S/N filter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blank-subtraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blank subtraction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exclusion-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exclusion list
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-intensities-as" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export intensities as
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-as-csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export as CSV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isomerisobar-grouping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Isomer/Isobar grouping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metaboanalyst-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MetaboAnalyst export
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dataanalysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#parameter-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameter overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normalization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#internal-standard-normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Internal standard normalization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blank-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blank filter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sample filter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qc-cv-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QC CV filtering
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sn-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S/N filter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blank-subtraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blank subtraction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exclusion-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exclusion list
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-intensities-as" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export intensities as
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#export-as-csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Export as CSV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isomerisobar-grouping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Isomer/Isobar grouping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metaboanalyst-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MetaboAnalyst export
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical tips
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="feature-processing-panel">Feature processing panel</h1>
+<p>The <strong>Feature Processing</strong> panel controls how detected or targeted features are filtered, normalized, summarized, and exported.</p>
+<p><img alt="Feature processing panel" src="../../img/features/featprocessing.png" width="300px" /></p>
+<p>The settings in this panel affect the active m/z feature list and the exported feature table. In general, filters remove features from the current feature list, while normalization changes the intensity values that are exported or used for analysis.</p>
+<h2 id="parameter-overview">Parameter overview</h2>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normalization</td>
+<td>Selects how intensity values should be normalized</td>
+</tr>
+<tr>
+<td>Internal Standard Normalization</td>
+<td>Normalizes features using a selected reference m/z</td>
+</tr>
+<tr>
+<td>Blank Filter</td>
+<td>Removes features that are too abundant in blank samples</td>
+</tr>
+<tr>
+<td>Sample Filter</td>
+<td>Keeps features detected in enough sample sections</td>
+</tr>
+<tr>
+<td>QC CV Filtering</td>
+<td>Removes features with poor reproducibility in QC samples</td>
+</tr>
+<tr>
+<td>S/N Filter</td>
+<td>Removes features below a signal-to-noise threshold</td>
+</tr>
+<tr>
+<td>Blank Subtraction</td>
+<td>Subtracts blank signal from sample signal</td>
+</tr>
+<tr>
+<td>Exclusion List</td>
+<td>Removes user-specified m/z values</td>
+</tr>
+<tr>
+<td>Export Intensities as</td>
+<td>Selects how scan-level intensities are summarized</td>
+</tr>
+<tr>
+<td>Export as CSV</td>
+<td>Writes the processed feature table to a CSV file</td>
+</tr>
+<tr>
+<td>Isomer/Isobar Grouping</td>
+<td>Optional grouping of features with similar or ambiguous m/z values</td>
+</tr>
+<tr>
+<td>MetaboAnalyst Export</td>
+<td>Exports the table in a MetaboAnalyst-compatible format</td>
+</tr>
+</tbody>
+</table>
+<h2 id="normalization">Normalization</h2>
+<p>The <strong>Normalization</strong> section controls whether exported intensities are normalized.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>No normalization is applied</td>
+</tr>
+<tr>
+<td>TIC</td>
+<td>Intensities are normalized by total ion current</td>
+</tr>
+<tr>
+<td>Targeted TIC</td>
+<td>Intensities are normalized by the total signal of the targeted feature set</td>
+</tr>
+</tbody>
+</table>
+<p>Use <strong>None</strong> when you want to export the summarized raw intensities.</p>
+<p>Use <strong>TIC</strong> when you want to correct for differences in total signal between samples or sections.</p>
+<p>Use <strong>Targeted TIC</strong> when you want normalization to be based only on the features in the current analyte or m/z list.</p>
+<h2 id="internal-standard-normalization">Internal standard normalization</h2>
+<p>Internal standard normalization divides feature intensities by the signal of a selected reference m/z.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable</td>
+<td>Turns internal standard normalization on or off</td>
+</tr>
+<tr>
+<td>m/z</td>
+<td>Reference m/z used as internal standard</td>
+</tr>
+<tr>
+<td>Conc.</td>
+<td>Optional concentration scaling factor</td>
+</tr>
+<tr>
+<td>Resp.Fac</td>
+<td>Optional response factor scaling value</td>
+</tr>
+</tbody>
+</table>
+<p>When enabled, DIP_IT searches for the internal standard m/z in the feature list using the selected ppm tolerance. If a matching feature is found, each feature is divided by the internal standard signal.</p>
+<p>This is useful when a known internal standard was added to all samples and should be used to correct for variation in acquisition or ionization.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The m/z value is used to find the internal standard feature. The normalization uses the internal standard signal, not the m/z number itself.</p>
+</div>
+<h2 id="blank-filter">Blank filter</h2>
+<p>The <strong>Blank Filter</strong> removes features that are too abundant in blank samples.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable</td>
+<td>Turns blank filtering on or off</td>
+</tr>
+<tr>
+<td>Fold change</td>
+<td>Required sample-to-blank fold change</td>
+</tr>
+<tr>
+<td>Blank Detections</td>
+<td>Minimum number of blanks where the feature must be detected before the blank rule is applied</td>
+</tr>
+<tr>
+<td>Match intensity by</td>
+<td>Selects how blank intensity is summarized</td>
+</tr>
+<tr>
+<td>Mean</td>
+<td>Uses mean blank intensity</td>
+</tr>
+<tr>
+<td>Max</td>
+<td>Uses maximum blank intensity</td>
+</tr>
+</tbody>
+</table>
+<p>The blank filter compares sample signal against blank signal. Features that do not exceed the blank signal by the required fold change can be removed.</p>
+<p>For example, if the fold change is set to <code>3</code>, a feature must be more than three times higher in samples than in blanks to pass the filter.</p>
+<p>Use this filter to reduce background signals, contaminants, and carryover peaks.</p>
+<h2 id="sample-filter">Sample filter</h2>
+<p>The <strong>Sample Filter</strong> removes features that are not detected in enough sample sections.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable</td>
+<td>Turns the sample filter on or off</td>
+</tr>
+<tr>
+<td>Sample %</td>
+<td>Minimum percentage of sample sections where the feature must be detected</td>
+</tr>
+</tbody>
+</table>
+<p>This filter is useful for removing features that occur only rarely or appear in too few samples to be useful for downstream analysis.</p>
+<p>For example, if <code>Sample %</code> is set to <code>50</code>, a feature must be detected in at least half of the selected sample sections to pass.</p>
+<h2 id="qc-cv-filtering">QC CV filtering</h2>
+<p>The <strong>QC CV Filtering</strong> option removes features with high variation across QC samples.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable</td>
+<td>Turns QC CV filtering on or off</td>
+</tr>
+<tr>
+<td>Threshold %</td>
+<td>Maximum allowed coefficient of variation in QC samples</td>
+</tr>
+</tbody>
+</table>
+<p>QC CV is calculated from the QC samples defined in the log file. A low CV means that a feature is reproducible across QC samples. A high CV suggests that the feature may be unstable, noisy, or poorly measured.</p>
+<p>For example, if the threshold is set to <code>20</code>, features with QC CV above 20% are removed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>QC CV filtering requires samples labelled <code>qc</code> in the log file.</p>
+</div>
+<h2 id="sn-filter">S/N filter</h2>
+<p>The <strong>S/N Filter</strong> removes features with low signal-to-noise ratios.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable</td>
+<td>Turns S/N filtering on or off</td>
+</tr>
+<tr>
+<td>Minimum S/N</td>
+<td>Minimum required signal-to-noise ratio</td>
+</tr>
+</tbody>
+</table>
+<p>This filter is mainly intended for Thermo <code>.RAW</code> workflows where signal-to-noise information is available from the raw file.</p>
+<p>Features with median S/N below the selected threshold are removed from the active feature list.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Signal-to-noise filtering is a quality filter. It should not be confused with exporting intensities as signal-to-noise ratios.</p>
+</div>
+<h2 id="blank-subtraction">Blank subtraction</h2>
+<p><strong>Blank Subtraction</strong> subtracts the blank signal from non-blank samples or sections.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Enable</td>
+<td>Turns blank subtraction on or off</td>
+</tr>
+<tr>
+<td>Average</td>
+<td>Uses average blank signal for subtraction</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>Uses median blank signal for subtraction</td>
+</tr>
+<tr>
+<td>Filter zero-intensity features</td>
+<td>Removes features where all sample intensities become zero after blank subtraction</td>
+</tr>
+</tbody>
+</table>
+<p>Blank subtraction is applied before normalization. If subtraction produces negative values, these values are set to zero.</p>
+<p>The <strong>Filter zero-intensity features</strong> option removes features that have no remaining sample signal after blank subtraction. If the checkbox is disabled, those features can appear again.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Blank subtraction changes intensity values, while blank filtering removes features based on a sample-to-blank rule. These are related but different operations.</p>
+</div>
+<h2 id="exclusion-list">Exclusion list</h2>
+<p>The <strong>Exclusion List</strong> removes user-specified m/z values from the feature list.</p>
+<p>Use <strong>Upload</strong> to select a <code>.csv</code> or <code>.xlsx</code> file containing m/z values to remove. This can be useful for excluding known contaminants, calibration peaks, background ions, or unwanted features.</p>
+<p>The exclusion list is applied as a filter. If the exclusion list is removed or disabled, the excluded features can be restored.</p>
+<h2 id="export-intensities-as">Export intensities as</h2>
+<p>The <strong>Export Intensities as</strong> dropdown controls how scan-level intensities are summarized for export.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Integral</td>
+<td>Sums intensity across scans</td>
+</tr>
+<tr>
+<td>Average including zeros</td>
+<td>Calculates average intensity including zero values</td>
+</tr>
+<tr>
+<td>Average excluding zeros</td>
+<td>Calculates average intensity after ignoring zero values</td>
+</tr>
+<tr>
+<td>Median</td>
+<td>Calculates median intensity across scans</td>
+</tr>
+<tr>
+<td>Signal-to-noise ratio</td>
+<td>Exports S/N summaries instead of intensity values</td>
+</tr>
+</tbody>
+</table>
+<p>For most quantitative analysis, use <strong>Integral</strong>, <strong>Average</strong>, or <strong>Median</strong>.</p>
+<p>Use <strong>Signal-to-noise ratio</strong> when the goal is to inspect feature quality rather than abundance.</p>
+<h2 id="export-as-csv">Export as CSV</h2>
+<p>The <strong>Export as CSV</strong> button writes the processed feature table to a CSV file.</p>
+<p>The exported table usually contains:</p>
+<table>
+<thead>
+<tr>
+<th>Column type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>m/z</td>
+<td>Feature m/z value</td>
+</tr>
+<tr>
+<td>annotation</td>
+<td>Feature name or annotation, if available</td>
+</tr>
+<tr>
+<td>sample or section columns</td>
+<td>Processed intensity values</td>
+</tr>
+</tbody>
+</table>
+<p>The exported features reflect the currently active filters. If filters remove features from the m/z list, those features are not included in the export.</p>
+<h2 id="isomerisobar-grouping">Isomer/Isobar grouping</h2>
+<p>The <strong>Isomer/Isobar Grouping</strong> option is intended for grouping features that may represent the same nominal mass, overlapping m/z values, or ambiguous feature assignments.</p>
+<p>Use this option when features are difficult to distinguish by m/z alone and should be reported together or flagged during export.</p>
+<h2 id="metaboanalyst-export">MetaboAnalyst export</h2>
+<p>The <strong>MetaboAnalyst Export</strong> option writes the feature table in a format suitable for upload to MetaboAnalyst.</p>
+<p>The MetaboAnalyst export includes sample names, class labels, feature names, and intensity values in the expected layout.</p>
+<p>When annotations are available, they can be used as feature names. Otherwise, DIP_IT can use m/z-based feature labels.</p>
+<h2 id="example-workflow">Example workflow</h2>
+<p>Example of a typical workflow can be:</p>
+<ol>
+<li>Load the experiment and optional analyte list.</li>
+<li>Confirm that sample, blank, and QC labels are correct.</li>
+<li>Choose an intensity summary mode.</li>
+<li>Apply sample occurrence filtering.</li>
+<li>Apply blank filtering or blank subtraction if blanks are available.</li>
+<li>Apply QC CV filtering if QC samples are available.</li>
+<li>Apply S/N filtering if using raw files with S/N values.</li>
+<li>Choose a normalization method.</li>
+<li>Export the processed feature table.</li>
+</ol>
+<h2 id="practical-tips">Practical tips</h2>
+<ul>
+<li>Check class labels before applying blank or QC filters.</li>
+<li>Use blank filtering to remove background-like features.</li>
+<li>Use blank subtraction when you want to correct intensity values for blank signal.</li>
+<li>Use QC CV filtering to remove unstable features.</li>
+<li>Use S/N filtering as a feature quality filter.</li>
+<li>Recheck the m/z feature list after changing filters.</li>
+<li>If a filter removes too many features, lower the threshold or disable the filter and rebuild the list.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
