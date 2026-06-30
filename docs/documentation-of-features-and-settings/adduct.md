@@ -96,7 +96,7 @@ For each target m/z, DIP_IT:
 2. Calculates the corresponding neutral mass.
 3. Calculates the expected m/z values for the selected adducts.
 4. Searches the raw/section data for matching peaks within the selected ppm tolerance.
-5. Exports an evidence table with expected m/z, observed m/z, ppm error, detection status, and section intensities.
+5. Exports an evidence table with expected m/z, observed m/z, ppm error, probable adduct, and section intensities.
 
 This is useful when you already have a target list and want to check whether related adducts are present in the data. If the m/z target list is annotated with an adduct suffix, DIP_IT can infer the base adduct automatically, which is explained more in the next section.
 
@@ -126,14 +126,29 @@ This workflow uses findMAIN/InterpretMSSpectrum ([Article](https://pubmed.ncbi.n
 
 Untargeted adduct search is more exploratory than targeted adduct search. It can suggest possible adduct relationships, but results should be inspected carefully and validated where possible.
 
+The untargeted adduct search exports an evidence table containing the neutral mass, observed m/z, the probable adduct, and the intensity of the adduct for each section. 
+
+
 !!! note
     Untargeted adduct search requires the R package `InterpretMSSpectrum` to be installed and available. See the installation documentation for details.
 
+!!! info
+    The resulting adduct hypothesis for a section is derived from a combination of findMain's own scoring method with the adduct detection frequency count in a section. 
+    
+    In detail, findMain is run on each scan in a section, and outputs a probability score for each probable adduct in a scan. The median score across scans is then multiplied by the detection frequency, and the adduct hypothesis with the highest score is selected as the probable adduct. 
+    
+    For example, the median score may be 0.5 for an adduct across the scans in a section, and it may be detected across 17/20 scans. Thus, the score becomes 0.5*17 = 8.5 for that adduct. The adduct with the highest score becomes the candidate adduct. 
+
 ## Isotopologue detection
 
-**Detect Isotopologues** enables isotopologue grouping or isotope evidence detection.
+**Detect Isotopologues** enables carbon isotopologue grouping or carbon isotope evidence detection.
 
-Isotopologues are related peaks caused by naturally occurring isotopes, such as M+1, M+2, or M+3 peaks. These peaks occur at predictable m/z differences from the base feature.
+Carbon isotopologues are related peaks caused by the natural abundance of Carbon-13. These peaks occur at predictable m/z differences from the monoisotopic feature. More specifically, they occur at
+
+$$
+m/z = M + N × 1.00335
+$$
+where N is the number of incorporated Carbon-13 atoms.
 
 In targeted mode, DIP_IT uses the current m/z list and searches the scan data for isotope peaks related to each target m/z. DIP_IT searches for isotopologue peaks up to M+6.
 
@@ -147,7 +162,7 @@ For each target m/z, DIP_IT can search for:
 | M+3 | Third isotope peak |
 | M+n | Higher isotope peaks, up to M+6 |
 
-The output can include expected m/z, observed m/z, ppm error, detection status, and intensity values across sections.
+The output includes a .CSV of expected m/z, observed m/z, ppm error, and intensity values across sections, grouped together by their monoisotopic m/z.
 
 ## All sections
 
@@ -177,4 +192,7 @@ Use **Untargeted Adduct Search** when:
 - you want to discover possible adduct relationships
 - you want findMAIN to suggest adduct hypotheses
 - you are exploring unknown features
+
+!!! tip
+    The adduct search supports TIC, Targeted Tic, Internal Standard and QC Drift normalization, if they are selected in the feature processing panel. 
 

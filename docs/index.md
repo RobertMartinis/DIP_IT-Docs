@@ -1,4 +1,4 @@
-# Welcome to the DIP_IT Documentation
+# Welcome to the DIP_IT Docs
 
 <p align="center">
   <img src="img/logo.png" alt="Logo" width="500px">
@@ -6,7 +6,7 @@
 
 DIP_IT is a MATLAB-based platform for direct infusion mass spectrometry data processing, filtering, normalization, visualization, and export.
 
-The app is designed around section-wise MS workflows, including continuous acquisition data, blank and QC filtering, adduct evidence, isotopologue evidence, and downstream statistical analysis.
+The app is designed to support sequental and continuously acquisitioned data, blank and QC filtering, detecting adduct possible adducts and isotopologues, and downstream statistical analysis.
 
 ## Where to start
 

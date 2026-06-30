@@ -143,7 +143,7 @@ The **Filter zero-intensity features** option removes features that have no rema
 
 The **Exclusion List** removes user-specified m/z values from the feature list.
 
-Use **Upload** to select a `.csv` or `.xlsx` file containing m/z values to remove. This can be useful for excluding known contaminants, calibration peaks, background ions, or unwanted features.
+Use **Upload** to select a `.csv` or `.xlsx` file containing m/z values to remove as the first column. This can be useful for excluding known contaminants, calibration peaks, background ions, or unwanted features.
 
 The exclusion list is applied as a filter. If the exclusion list is removed or disabled, the excluded features can be restored.
 

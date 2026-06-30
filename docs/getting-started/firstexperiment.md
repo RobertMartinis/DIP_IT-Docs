@@ -6,7 +6,7 @@ This page describes the basic workflow for loading a new experiment into DIP_IT.
 
 The application supports `.mzML` and Thermofisher `.RAW` files, collected either in sequence or in continuous mode. 
 
-For either of these modes, the application requires a log file in the `.CSV` or `.xsls` that specifies which files to load, and the class label for each section/file, such as sample, blank or QC. 
+For either of these modes, the application requires a log file in the `.CSV` or `.xlsx` that specifies which files to load, and the class label for each section/file, such as sample, blank or QC. 
 
 For tageted analysis, an analyte list is needed where the first column is the m/z of interest, and the second column is its corresponding annotation. 
 
@@ -57,11 +57,11 @@ The table below shows how the structure of the analyte list should look like.
 | ...        | ...     |
 
 
-## Loading an experiment
+## Loading an experiment 
 
 After creating an log file and an optional analyte list, you should now be able to load the data into the application. To do so, first select in which mode the dataset has been collected (Sequential or Continuous), and press **Load Log File** to select the log file.  
 
-### Sequential experiments
+### Sequential experiments {: .cyan-header}
 
 Use sequential mode when each file represents one sample, blank, or QC acquisition.
 
@@ -78,11 +78,16 @@ Example:
 
 Sequential mode is usually appropriate when the acquisition software saved one file per sample.
 
-### Continuous experiments
+### Continuous experiments {: .green-header}
 
 Use continuous mode when one file contains several acquisition sections. This can occur when multiple sample injections or sample regions are acquired inside the same `.RAW` or `.mzML` file.
 
 In continuous mode, DIP_IT detects sections and stores the scan interval for each section, instead of considering each file its own section.
+
+![Image](../img/getting-started/continuous.png)
+/// caption
+A total ion count (TIC) profile of a continuous experiment, with a section detected by DIP highlighted in orange. 
+///
 
 ## Exporting features
 
@@ -101,6 +106,9 @@ Depending on the workflow, the feature list can come from:
 - filtered features after applying sample, blank, QC, S/N, or exclusion filters
 
 When filters are applied, the feature list is updated. This means that exports and data analysis are based on the currently retained features.
+
+!!! tip
+    A filter is directly applied to the feature list when its enabled or disabled, or when the filters parameter is changed. This means that you do not have to reload the data or perform peak detection again after applying filters.
 
 ### Selecting an intensity summary
 
