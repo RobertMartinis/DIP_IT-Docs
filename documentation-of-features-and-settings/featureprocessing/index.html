@@ -51,6 +51,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1332,7 +1334,7 @@
 </div>
 <h2 id="exclusion-list">Exclusion list</h2>
 <p>The <strong>Exclusion List</strong> removes user-specified m/z values from the feature list.</p>
-<p>Use <strong>Upload</strong> to select a <code>.csv</code> or <code>.xlsx</code> file containing m/z values to remove. This can be useful for excluding known contaminants, calibration peaks, background ions, or unwanted features.</p>
+<p>Use <strong>Upload</strong> to select a <code>.csv</code> or <code>.xlsx</code> file containing m/z values to remove as the first column. This can be useful for excluding known contaminants, calibration peaks, background ions, or unwanted features.</p>
 <p>The exclusion list is applied as a filter. If the exclusion list is removed or disabled, the excluded features can be restored.</p>
 <h2 id="export-intensities-as">Export intensities as</h2>
 <p>The <strong>Export Intensities as</strong> dropdown controls how scan-level intensities are summarized for export.</p>
@@ -1477,6 +1479,10 @@
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

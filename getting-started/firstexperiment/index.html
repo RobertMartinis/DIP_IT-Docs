@@ -51,6 +51,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -1065,7 +1067,7 @@
 <p>This page describes the basic workflow for loading a new experiment into DIP_IT. An experiment usually consists of mass spectrometry data files, a log file describing the samples, and an optional analyte list.</p>
 <h2 id="what-you-need">What you need</h2>
 <p>The application supports <code>.mzML</code> and Thermofisher <code>.RAW</code> files, collected either in sequence or in continuous mode. </p>
-<p>For either of these modes, the application requires a log file in the <code>.CSV</code> or <code>.xsls</code> that specifies which files to load, and the class label for each section/file, such as sample, blank or QC. </p>
+<p>For either of these modes, the application requires a log file in the <code>.CSV</code> or <code>.xlsx</code> that specifies which files to load, and the class label for each section/file, such as sample, blank or QC. </p>
 <p>For tageted analysis, an analyte list is needed where the first column is the m/z of interest, and the second column is its corresponding annotation. </p>
 <h2 id="creating-a-log-file">Creating a log file</h2>
 <p>To create a log file, open the <strong>Create log file</strong> button in and select a folder containing either <code>.RAW</code> or <code>.mzML</code> files.</p>
@@ -1152,7 +1154,7 @@
 </table>
 <h2 id="loading-an-experiment">Loading an experiment</h2>
 <p>After creating an log file and an optional analyte list, you should now be able to load the data into the application. To do so, first select in which mode the dataset has been collected (Sequential or Continuous), and press <strong>Load Log File</strong> to select the log file.  </p>
-<h3 id="sequential-experiments">Sequential experiments</h3>
+<h3 class="cyan-header" id="sequential-experiments">Sequential experiments</h3>
 <p>Use sequential mode when each file represents one sample, blank, or QC acquisition.</p>
 <p>In sequential mode, the log file usually contains one row per file. DIP_IT loads each file as a separate sample entry and uses the <code>class</code> column to decide how that file should be used during filtering and analysis.</p>
 <p>Example:</p>
@@ -1188,9 +1190,15 @@
 </tbody>
 </table>
 <p>Sequential mode is usually appropriate when the acquisition software saved one file per sample.</p>
-<h3 id="continuous-experiments">Continuous experiments</h3>
+<h3 class="green-header" id="continuous-experiments">Continuous experiments</h3>
 <p>Use continuous mode when one file contains several acquisition sections. This can occur when multiple sample injections or sample regions are acquired inside the same <code>.RAW</code> or <code>.mzML</code> file.</p>
 <p>In continuous mode, DIP_IT detects sections and stores the scan interval for each section, instead of considering each file its own section.</p>
+<figure>
+<p><img alt="Image" src="../../img/getting-started/continuous.png" /></p>
+<figcaption>
+<p>A total ion count (TIC) profile of a continuous experiment, with a section detected by DIP highlighted in orange. </p>
+</figcaption>
+</figure>
 <h2 id="exporting-features">Exporting features</h2>
 <p>If everything has gone well so far, you should have successfully loaded an experiment! The application will look similar to below, displaying a chronogram and a feature list.</p>
 <p><img alt="Image" src="../../img/getting-started/app.png" /></p>
@@ -1203,6 +1211,10 @@
 <li>filtered features after applying sample, blank, QC, S/N, or exclusion filters</li>
 </ul>
 <p>When filters are applied, the feature list is updated. This means that exports and data analysis are based on the currently retained features.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>A filter is directly applied to the feature list when its enabled or disabled, or when the filters parameter is changed. This means that you do not have to reload the data or perform peak detection again after applying filters.</p>
+</div>
 <h3 id="selecting-an-intensity-summary">Selecting an intensity summary</h3>
 <p>Before exporting, choose how intensities should be summarized across scans or sections.</p>
 <p>The options are:</p>
@@ -1399,6 +1411,10 @@
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

@@ -2,38 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://mydomain.org/mysite/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-06-30</lastmod>
     </url>
     <url>
          <loc>https://mydomain.org/mysite/documentation-of-features-and-settings/adduct/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-06-30</lastmod>
     </url>
     <url>
          <loc>https://mydomain.org/mysite/documentation-of-features-and-settings/dataanalysis/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-06-30</lastmod>
     </url>
     <url>
          <loc>https://mydomain.org/mysite/documentation-of-features-and-settings/featureprocessing/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-06-30</lastmod>
     </url>
     <url>
          <loc>https://mydomain.org/mysite/documentation-of-features-and-settings/generalparameters/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-06-30</lastmod>
     </url>
     <url>
          <loc>https://mydomain.org/mysite/documentation-of-features-and-settings/sectiondefinition/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-06-30</lastmod>
     </url>
     <url>
          <loc>https://mydomain.org/mysite/getting-started/createlogfile/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-06-30</lastmod>
     </url>
     <url>
          <loc>https://mydomain.org/mysite/getting-started/firstexperiment/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-06-30</lastmod>
     </url>
     <url>
          <loc>https://mydomain.org/mysite/getting-started/installation/</loc>
-         <lastmod>2026-06-18</lastmod>
+         <lastmod>2026-06-30</lastmod>
     </url>
 </urlset>
