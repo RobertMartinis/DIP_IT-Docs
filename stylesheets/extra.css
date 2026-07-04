@@ -1,7 +1,20 @@
 .md-typeset .cyan-header {
-  color: #43aba7
+  color: #43aba7;
+  font-weight: bold;
+}
+
+.md-typeset .cyan-text {
+
+  color: #43aba7;
+
 }
 
 .md-typeset .green-header {
-    color: #56cc93
+    color: #56cc93;
+    font-weight: bold;
+}
+
+.md-typeset .green-text {
+    color: #56cc93;
+
 }

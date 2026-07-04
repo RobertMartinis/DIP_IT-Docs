@@ -1155,9 +1155,9 @@
 <h2 id="loading-an-experiment">Loading an experiment</h2>
 <p>After creating an log file and an optional analyte list, you should now be able to load the data into the application. To do so, first select in which mode the dataset has been collected (Sequential or Continuous), and press <strong>Load Log File</strong> to select the log file.  </p>
 <h3 class="cyan-header" id="sequential-experiments">Sequential experiments</h3>
-<p>Use sequential mode when each file represents one sample, blank, or QC acquisition.</p>
-<p>In sequential mode, the log file usually contains one row per file. DIP_IT loads each file as a separate sample entry and uses the <code>class</code> column to decide how that file should be used during filtering and analysis.</p>
-<p>Example:</p>
+<p class="cyan-text">Use sequential mode when each file represents one sample, blank, or QC acquisition.</p>
+<p class="cyan-text">In sequential mode, the log file usually contains one row per file. DIP_IT loads each file as a separate sample entry and uses the <code>class</code> column to decide how that file should be used during filtering and analysis.</p>
+<p class="cyan-text">Example:</p>
 <table>
 <thead>
 <tr>
@@ -1189,14 +1189,14 @@
 </tr>
 </tbody>
 </table>
-<p>Sequential mode is usually appropriate when the acquisition software saved one file per sample.</p>
+<p class="cyan-text">Sequential mode is usually appropriate when the acqusition saved one file per sample.</p>
 <h3 class="green-header" id="continuous-experiments">Continuous experiments</h3>
-<p>Use continuous mode when one file contains several acquisition sections. This can occur when multiple sample injections or sample regions are acquired inside the same <code>.RAW</code> or <code>.mzML</code> file.</p>
-<p>In continuous mode, DIP_IT detects sections and stores the scan interval for each section, instead of considering each file its own section.</p>
+<p class="green-text">Use continuous mode when one file contains several acquisition sections. This can occur when multiple sample injections or sample regions are acquired inside the same <code>.RAW</code> or <code>.mzML</code> file.</p>
+<p class="green-text">In continuous mode, DIP_IT detects sections and stores the scan interval for each section, instead of considering each file its own section.</p>
 <figure>
 <p><img alt="Image" src="../../img/getting-started/continuous.png" /></p>
 <figcaption>
-<p>A total ion count (TIC) profile of a continuous experiment, with a section detected by DIP highlighted in orange. </p>
+<p class="green-text">A total ion count (TIC) profile of a continuous experiment, with a section detected by DIP highlighted in orange. </p>
 </figcaption>
 </figure>
 <h2 id="exporting-features">Exporting features</h2>
