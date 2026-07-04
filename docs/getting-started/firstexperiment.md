@@ -64,10 +64,13 @@ After creating an log file and an optional analyte list, you should now be able 
 ### Sequential experiments {: .cyan-header}
 
 Use sequential mode when each file represents one sample, blank, or QC acquisition.
+{: .cyan-text}
 
 In sequential mode, the log file usually contains one row per file. DIP_IT loads each file as a separate sample entry and uses the `class` column to decide how that file should be used during filtering and analysis.
+{: .cyan-text}
 
 Example:
+{: .cyan-text}
 
 | file_dir | sample | class |
 |---|---|---|
@@ -76,17 +79,21 @@ Example:
 | `C:\data\qc_01.mzML` | `qc_01` | `qc` |
 | `C:\data\blank_01.mzML` | `blank_01` | `blank` |
 
-Sequential mode is usually appropriate when the acquisition software saved one file per sample.
+Sequential mode is usually appropriate when the acqusition saved one file per sample.
+{: .cyan-text}
 
 ### Continuous experiments {: .green-header}
 
 Use continuous mode when one file contains several acquisition sections. This can occur when multiple sample injections or sample regions are acquired inside the same `.RAW` or `.mzML` file.
+{: .green-text}
 
 In continuous mode, DIP_IT detects sections and stores the scan interval for each section, instead of considering each file its own section.
+{: .green-text}
 
 ![Image](../img/getting-started/continuous.png)
 /// caption
 A total ion count (TIC) profile of a continuous experiment, with a section detected by DIP highlighted in orange. 
+{: .green-text}
 ///
 
 ## Exporting features
