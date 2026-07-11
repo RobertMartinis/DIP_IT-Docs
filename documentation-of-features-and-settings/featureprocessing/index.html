@@ -678,6 +678,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#qc-drift-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QC Drift Correction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#blank-filter" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -913,6 +924,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#qc-drift-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        QC Drift Correction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#blank-filter" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1083,6 +1105,10 @@
 <td>Normalizes features using a selected reference m/z</td>
 </tr>
 <tr>
+<td>QC Drift Correction</td>
+<td>Corrects instrumental drift by normalizing features to loess-regressed QC intensities</td>
+</tr>
+<tr>
 <td>Blank Filter</td>
 <td>Removes features that are too abundant in blank samples</td>
 </tr>
@@ -1185,6 +1211,17 @@
 <p class="admonition-title">Note</p>
 <p>The m/z value is used to find the internal standard feature. The normalization uses the internal standard signal, not the m/z number itself.</p>
 </div>
+<h2 id="qc-drift-correction">QC Drift Correction</h2>
+<p>Due to instrumental variation, feature intensities may gradually decrease or fluctuate throughout an analytical run. The <strong>QC Drift Correction</strong> option compensates for these changes by fitting a LOESS curve to the QC sample intensities as a function of injection order and normalizing each feature against the fitted trend. The trend of the selected m/z feature can be plotted by pressing the <strong>plot</strong> button. </p>
+<p>The span parameter determines the window size of the loess-model, which affects if the regression should be more global or local in respect to the QC points. For example, a span of 0.5 will use a window size corresponding to 50% of all QC values. A good default value is 0.75. Otherwise, the trend may start to overfit to the QC-values.</p>
+<p>The Median Rescaling option scales the normalized feature intensity by the median QC value. This is useful for comparing feature intensities before and after normalization, as well as keeping the intensity scale as close to original as possible.</p>
+<p><img alt="" src="../../img/features/qc_0%2C75_span.png" /></p>
+<figure>
+<p><img alt="" src="../../img/features/qc_0.5_span.png" /></p>
+<figcaption>
+<p>Two loess-regression plots showing the effects of a span of 0.75 versus 0.5. It can be seen that a lower span causes the trend to fit more closely to the QC values. </p>
+</figcaption>
+</figure>
 <h2 id="blank-filter">Blank filter</h2>
 <p>The <strong>Blank Filter</strong> removes features that are too abundant in blank samples.</p>
 <table>
