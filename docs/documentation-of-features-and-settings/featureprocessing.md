@@ -72,7 +72,7 @@ The Median Rescaling option scales the normalized feature intensity by the media
 
 ![](../img/features/qc_0.5_span.png)
 /// caption
-Two loess-regression plots showing the effects of a span of 0.75 versus 0.5. It can be seen that a lower span causes the trend to fit more closely to the QC values. 
+Two LOESS-regression plots showing the effects of a span of 0.75 (top) versus 0.5 (bottom). It can be seen that a lower span causes the trend to fit more closely to the QC values. 
 ///
 
 
