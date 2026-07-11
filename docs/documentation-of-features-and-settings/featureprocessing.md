@@ -12,6 +12,7 @@ The settings in this panel affect the active m/z feature list and the exported f
 |---|---|
 | Normalization | Selects how intensity values should be normalized |
 | Internal Standard Normalization | Normalizes features using a selected reference m/z |
+| QC Drift Correction | Corrects instrumental drift by normalizing features to loess-regressed QC intensities |
 | Blank Filter | Removes features that are too abundant in blank samples |
 | Sample Filter | Keeps features detected in enough sample sections |
 | QC CV Filtering | Removes features with poor reproducibility in QC samples |
@@ -56,6 +57,24 @@ This is useful when a known internal standard was added to all samples and shoul
 
 !!! note
     The m/z value is used to find the internal standard feature. The normalization uses the internal standard signal, not the m/z number itself.
+
+
+## QC Drift Correction
+Due to instrumental variation, feature intensities may gradually decrease or fluctuate throughout an analytical run. The **QC Drift Correction** option compensates for these changes by fitting a LOESS curve to the QC sample intensities as a function of injection order and normalizing each feature against the fitted trend. The trend of the selected m/z feature can be plotted by pressing the **plot** button. 
+
+The span parameter determines the window size of the loess-model, which affects if the regression should be more global or local in respect to the QC points. For example, a span of 0.5 will use a window size corresponding to 50% of all QC values. A good default value is 0.75. Otherwise, the trend may start to overfit to the QC-values.
+
+The Median Rescaling option scales the normalized feature intensity by the median QC value. This is useful for comparing feature intensities before and after normalization, as well as keeping the intensity scale as close to original as possible.
+
+
+
+![](../img/features/qc_0,75_span.png)
+
+![](../img/features/qc_0.5_span.png)
+/// caption
+Two loess-regression plots showing the effects of a span of 0.75 versus 0.5. It can be seen that a lower span causes the trend to fit more closely to the QC values. 
+///
+
 
 ## Blank filter
 
