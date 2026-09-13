@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="560" viewBox="0 0 760 560" role="img" aria-label="MS/MS database search dialog image placeholder">
+  <rect width="760" height="560" fill="#f7f9fb"/>
+  <rect x="48" y="32" width="664" height="496" rx="6" fill="#ffffff" stroke="#c8d2dc" stroke-width="2"/>
+  <text x="380" y="75" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#22313f">Database Search Settings</text>
+  <g font-family="Arial, sans-serif" font-size="18" fill="#52616f">
+    <text x="95" y="130">Precursor unit</text>
+    <text x="95" y="180">Precursor tolerance</text>
+    <text x="95" y="230">Fragment unit</text>
+    <text x="95" y="280">Fragment tolerance</text>
+    <text x="95" y="330">Similarity mode</text>
+    <text x="95" y="380">Minimum ion intensity</text>
+    <text x="95" y="430">Top N peaks</text>
+  </g>
+  <g fill="#eef3f7" stroke="#d8e0e8">
+    <rect x="390" y="108" width="220" height="34"/>
+    <rect x="390" y="158" width="220" height="34"/>
+    <rect x="390" y="208" width="220" height="34"/>
+    <rect x="390" y="258" width="220" height="34"/>
+    <rect x="390" y="308" width="220" height="34"/>
+    <rect x="390" y="358" width="220" height="34"/>
+    <rect x="390" y="408" width="220" height="34"/>
+  </g>
+  <text x="380" y="490" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#52616f">Placeholder: replace with screenshot of the search dialog</text>
+</svg>
