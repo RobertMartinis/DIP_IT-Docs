@@ -15,6 +15,7 @@ The analysis tools use the currently loaded experiment, the current m/z feature 
 | Preprocessing | Applies transformations such as log transform or autoscaling |
 | Section Intensity | Selects how scan-level intensity values are summarized |
 | Analysis Method | Selects the statistical or visualization method |
+| MS/MS Spectrum Viewer | Opens individual MS/MS scans, averaged spectra, and database matching tools |
 | Show Plot | Runs the selected analysis and displays the result |
 | Export results | Saves the result table from the analysis |
 
@@ -382,3 +383,200 @@ A typical analysis workflow is:
 7. Select the analysis method.
 8. Press **Show Plot**.
 9. Export results if needed.
+
+
+## MS/MS spectrum viewer
+
+The **MS/MS Spectrum Viewer** is used to inspect tandem mass spectra from loaded raw or mzML data. It is useful for checking individual MS/MS scans, comparing scan filters, averaging repeated spectra, and running database searches from the selected spectrum.
+
+![MS/MS spectrum viewer placeholder](../img/features/dataanalysis/ms2-spectrum-viewer.png){ width="1000px" }
+/// caption
+The MS/MS spectrum viewer showing the TIC plot, selected scan marker, spectrum plot, scan filter dropdown, and additional controls.
+///
+
+The viewer contains two linked plots:
+
+| Plot | Description |
+|---|---|
+| TIC plot (top) | Shows the total ion current across scans for the selected scan filter or file |
+| Spectrum plot (bottom) | Shows the MS/MS spectrum for the currently selected scan or averaged scan range |
+
+Use the left and right arrow buttons, keyboard arrow keys, or the click on a scan in the TIC plot to move through scans. The vertical line in the TIC plot follows the currently selected scan.
+
+### Opening the viewer
+
+Open the viewer from the "Spectrum Viewer" button in the MS/MS Annotation panel after loading a file that contains MS/MS scans.
+
+The viewer uses the currently selected scan filter when possible. If a scan filter contains only one scan, or if all scans should be inspected together, the viewer can show **All scans**.
+
+
+### Scan filter selection
+
+The scan filter dropdown controls which scans are shown in the viewer.
+
+Selecting a scan filter updates the TIC plot and the spectrum plot to only use scans from that filter. 
+
+If several files are loaded, the file dropdown selects which file is being inspected. When file information is available from the log file, the dropdown shows the file name.
+
+### Inspecting individual spectra
+
+The lower plot shows the spectrum for the selected scan. 
+
+Use individual scan inspection to check:
+
+- whether the selected scan contains meaningful fragment peaks
+- whether the scan filter is the expected precursor or isolation window
+- whether the spectrum is empty, noisy, or saturated
+- whether repeated scans look consistent
+
+The **Copy Spectrum** button copies the currently displayed spectrum as a tab-delimited table with m/z and intensity columns.
+
+The **Export Spectrum** button saves the currently displayed spectrum to a .csv file.
+
+### Averaging spectra
+
+The **Average Spectrum** button averages spectra from the selected scan filter or selected scan range.
+
+When averaging, DIP_IT aligns peaks across scans using the current average tolerance:
+
+| Setting | Meaning |
+|---|---|
+| Avg tol | Maximum allowed distance between peaks before they are treated as separate m/z values |
+| ppm / Da | Selects whether the average tolerance is interpreted in parts per million or Dalton |
+
+For high-resolution data, ppm is often a good default. For low-resolution or rounded fragment libraries, Dalton tolerance may be more practical.
+
+![MS/MS range averaging placeholder](../img/features/dataanalysis/ms2-range-average.png){ width="1000px" }
+/// caption
+A mouse range selection on the TIC plot and the averaged spectrum shown below.
+///
+
+### Mouse selection over scans
+
+Click and drag across the TIC plot to select a scan range.
+
+After selecting a range, DIP_IT averages the spectra from scans inside that retention-time region. The lower spectrum plot updates to show the averaged spectrum.
+
+This is useful when:
+
+- several repeated MS/MS scans were acquired for the same scan filter
+- a single scan is noisy but nearby scans are consistent
+- you want a cleaner query spectrum for database matching
+- you want to compare spectra before and after changing the averaging tolerance
+
+### Database matching
+
+The **Search Database** button searches the current scan or averaged spectrum against a loaded MS/MS library.
+
+![MS/MS database](../img/features/dataanalysis/ms2-database-search.png){ width="400px" }
+/// caption
+The MS/MS database search settings dialog popup, which is shown after pressing the "Search Database" button.
+///
+
+The database search settings include:
+
+| Setting | Description |
+|---|---|
+| Precursor unit | Uses Dalton or ppm for precursor matching |
+| Precursor tolerance | Maximum allowed difference between query precursor m/z and library precursor m/z |
+| Fragment unit | Uses Dalton or ppm for fragment matching |
+| Fragment tolerance | Maximum allowed difference between query and library fragment peaks |
+| Similarity mode | Selects standard cosine or modified cosine scoring |
+| Minimum ion intensity | Removes query and library peaks below the selected intensity |
+| Top N peaks | Keeps only the most intense peaks before scoring |
+
+Use **Standard cosine** for stricter matching of the same compound. Use **Modified cosine** when searching for related spectra or analogues where fragments may shift with the precursor mass difference. [Link to a comparison between both metrics.](https://doi.org/10.1021/jasms.2c00153)
+
+After setting the parameters, select which database(s) the spectra should be matched against. DIP_IT provides a selection of commonly used MS/MS libraries in the form of .mat files. The database search supports searching in multiple databases simultaneously by multi-selecting which databases to search in.
+
+The database matching then returns a table of candidate library hits, initially sorted by the lowest ppm error.
+
+![MS/MS database results placeholder](../img/features/dataanalysis/ms2-database-search-results.png){ width="1000px" }
+/// caption
+Database search results for an MS2 spectra with parent ion m/z 788.6164, sorted by cosine score. The results suggests that the fragmentation pattern matches that of PC 36:1. 
+///
+
+ The columns in the result table include:
+
+| Column | Description |
+|---|---|
+| `compound_name` | Candidate library compound name |
+| `library_name` | Source library or database file |
+| `query_precursor_mz` | Precursor m/z used for the query |
+| `library_precursor_mz` | Library precursor m/z |
+| `precursor_error_da` / `precursor_error_ppm` | Difference between query and library precursor m/z |
+| `cosine_score` | Spectral similarity score |
+| `matched_fragment_count` | Number of matched fragments |
+| `explained_query_intensity_percent` | Percent of query signal represented by matched peaks |
+
+Double-clicking a result can open additional metadata when the loaded library contains a metadata table. 
+
+!!! info
+    The parent ion used for matching the database libraries is automatically extracted from the scan filter. It is therefore important that the scan filter contains the name of the parent ion. 
+
+### Mirror plot
+
+![MS/MS Mirror Plot](../img/features/dataanalysis/ms2-mirror-plot.png){ width="1000px" }
+/// caption
+Mirror plot of PC 36:1. Top shows the query spectrum, and the bottom shows the library spectrum. Matches are determined based on the tolerance parameters set in the search.
+///
+
+The database result viewer can show a mirror plot for a selected hit, by pressing the "Mirror plot" button inside the database search results
+
+The query spectrum is plotted above zero and the library spectrum is plotted below zero. Both spectra are normalized to relative base-peak intensity for display, so the tallest peak in each spectrum is shown on a comparable scale.
+
+Use the mirror plot to check whether a high database score is supported by meaningful fragment matches or by only a few intense peaks.
+
+### Suggested MS/MS workflow
+
+A typical MS/MS inspection workflow is:
+
+1. Load the raw or mzML file.
+2. Open the MS/MS spectrum viewer.
+3. Select the relevant scan filter.
+4. Scroll through scans and inspect the spectrum quality.
+5. Adjust the average tolerance if repeated scans should be averaged.
+6. Drag across the TIC plot or press **Average Spectrum** to create an averaged spectra of the whole scan filter.
+7. Press **Search Database**.
+8. Check precursor error, cosine score, matched fragment count, and the mirror plot.
+9. Copy or export the spectrum or results table if needed.
+
+For clean compound annotation, use the database result together with precursor accuracy, fragment matches, expected ion mode, sample context, and known chemistry.
+
+### Export MS2 Evidence
+
+The **Export MS2 Evidence** button is located in the MS/MS Annotation panel below the **Spectrum Viewer** button. It is separate from the export buttons inside the spectrum viewer.
+
+This tool searches the loaded MS/MS scan filters for user-defined diagnostic fragment ions and neutral losses, then exports the evidence as a .csv file. It is useful when you want to check whether specific fragment ions or neutral losses are consistently present across MS/MS scan filters.
+
+Before pressing **Export MS2 Evidence**, enter the expected values in the MS/MS Annotation panel:
+
+| Input | Description |
+|---|---|
+| Fragment list | Comma-separated diagnostic fragment m/z values to search for directly in the MS/MS spectra |
+| Neutral loss list | Comma-separated neutral losses to search for relative to each scan filter precursor m/z |
+| m/z tolerance | Maximum allowed distance between the expected fragment/neutral-loss m/z and an observed MS/MS peak |
+| Precursor tolerance | Groups nearby scan-filter precursor m/z values before summarizing the evidence |
+| Minimum mean intensity | Removes weak evidence rows below the selected average intensity threshold |
+| Minimum scans | Removes rows with too few MS/MS scans contributing evidence |
+
+The output table is saved as a semicolon-delimited .csv file. By default, the suggested filename is:
+
+```text
+ms2_hits.csv
+```
+
+The exported table summarizes each precursor or scan-filter group and contains columns such as:
+
+| Column | Description |
+|---|---|
+| `precursorMz` | Precursor m/z extracted from the MS/MS scan filter |
+| `filterName` | Scan filter name or grouped scan filter names |
+| `nScans` | Number of MS/MS scans contributing to that row |
+| `frag_<mz>` | Mean intensity of the selected diagnostic fragment ion |
+| `nl_<mz>` | Mean intensity of the selected neutral-loss-derived fragment ion |
+
+Nested per-scan evidence columns are removed before export because they do not paste cleanly into ordinary spreadsheet software.
+
+!!! note
+    **Export MS2 Evidence** is a targeted evidence export. It does not perform library database matching and does not export the currently plotted spectrum. For library matches, use **Search Database** inside the spectrum viewer. For the currently displayed spectrum, use **Copy Spectrum** or **Export Spectrum** inside the spectrum viewer.
