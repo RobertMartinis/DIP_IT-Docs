@@ -1036,6 +1036,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#library-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Library metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#mirror-plot" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1507,6 +1518,17 @@
     <span class="md-ellipsis">
       
         Database matching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#library-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Library metadata
       
     </span>
   </a>
@@ -2177,8 +2199,8 @@
 <td>Candidate library compound name</td>
 </tr>
 <tr>
-<td><code>library_name</code></td>
-<td>Source library or database file</td>
+<td><code>library_source</code></td>
+<td>Source database file used for the match</td>
 </tr>
 <tr>
 <td><code>query_precursor_mz</code></td>
@@ -2206,7 +2228,65 @@
 </tr>
 </tbody>
 </table>
-<p>Double-clicking a result can open additional metadata when the loaded library contains a metadata table. </p>
+<h3 id="library-metadata">Library metadata</h3>
+<p>When the selected database was converted with metadata, the database match viewer shows the metadata for the selected hit below the match table. Selecting a different database hit updates the metadata panel automatically.</p>
+<p>The metadata panel can include fields such as:</p>
+<table>
+<thead>
+<tr>
+<th>Metadata field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>compound_name</code></td>
+<td>Name of the matched library compound</td>
+</tr>
+<tr>
+<td><code>formula</code></td>
+<td>Molecular formula, when available</td>
+</tr>
+<tr>
+<td><code>exact_mass</code></td>
+<td>Neutral exact mass, when available</td>
+</tr>
+<tr>
+<td><code>adduct</code></td>
+<td>Ion/adduct form stored in the library entry</td>
+</tr>
+<tr>
+<td><code>ion_mode</code></td>
+<td>Positive or negative mode annotation</td>
+</tr>
+<tr>
+<td><code>instrument</code></td>
+<td>Instrument or analyzer used for the library spectrum</td>
+</tr>
+<tr>
+<td><code>collision_energy</code></td>
+<td>Collision energy or normalized collision energy for the library spectrum</td>
+</tr>
+<tr>
+<td><code>SMILES</code></td>
+<td>Text representation of the molecular structure</td>
+</tr>
+<tr>
+<td><code>InChI</code></td>
+<td>Standardized International Chemical Identifier</td>
+</tr>
+<tr>
+<td><code>InChIKey</code></td>
+<td>Short hashed identifier derived from the InChI</td>
+</tr>
+<tr>
+<td><code>accession</code></td>
+<td>Database accession or record identifier</td>
+</tr>
+</tbody>
+</table>
+<p>SMILES is the most useful field for drawing or previewing a chemical structure. InChI is useful for exact structural identity, while InChIKey is useful for grouping duplicate entries across databases.</p>
+<p>If the metadata panel says that no metadata table entry was found, the selected database file still works for spectral matching, but it was probably converted without the full metadata table. In that case, only the compact matching fields are available.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>The parent ion used for matching the database libraries is automatically extracted from the scan filter. It is therefore important that the scan filter contains the name of the parent ion. </p>
@@ -2218,7 +2298,7 @@
 <p>Mirror plot of PC 36:1. Top shows the query spectrum, and the bottom shows the library spectrum. Matches are determined based on the tolerance parameters set in the search.</p>
 </figcaption>
 </figure>
-<p>The database result viewer can show a mirror plot for a selected hit, by pressing the "Mirror plot" button inside the database search results</p>
+<p>The database result viewer shows a mirror plot for a selected hit.</p>
 <p>The query spectrum is plotted above zero and the library spectrum is plotted below zero. Both spectra are normalized to relative base-peak intensity for display, so the tallest peak in each spectrum is shown on a comparable scale.</p>
 <p>Use the mirror plot to check whether a high database score is supported by meaningful fragment matches or by only a few intense peaks.</p>
 <h3 id="suggested-msms-workflow">Suggested MS/MS workflow</h3>
