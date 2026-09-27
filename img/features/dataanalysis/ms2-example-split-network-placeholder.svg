@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-label="Split fragment network placeholder">
+  <rect width="1200" height="620" fill="#f5f7fa"/>
+  <rect x="44" y="42" width="1112" height="536" rx="12" fill="#ffffff" stroke="#c7d0d9" stroke-width="2"/>
+  <text x="600" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#22313f">After tightening the correlation threshold</text>
+  <text x="600" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#52616f">Placeholder: replace with screenshot after the chimeric group has split</text>
+  <g stroke-width="3">
+    <line x1="250" y1="250" x2="390" y2="205" stroke="#2db7d3"/>
+    <line x1="390" y1="205" x2="510" y2="285" stroke="#2db7d3"/>
+    <line x1="690" y1="235" x2="830" y2="290" stroke="#f26d21"/>
+    <line x1="830" y1="290" x2="940" y2="210" stroke="#f26d21"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#111111" text-anchor="middle">
+    <circle cx="250" cy="250" r="34" fill="#2db7d3"/><text x="250" y="255">102.1</text>
+    <circle cx="390" cy="205" r="34" fill="#2db7d3"/><text x="390" y="210">84.0</text>
+    <circle cx="510" cy="285" r="34" fill="#2db7d3"/><text x="510" y="290">56.0</text>
+    <circle cx="690" cy="235" r="34" fill="#f26d21"/><text x="690" y="240">135.0</text>
+    <circle cx="830" cy="290" r="34" fill="#f26d21"/><text x="830" y="295">123.0</text>
+    <circle cx="940" cy="210" r="34" fill="#f26d21"/><text x="940" y="215">152.1</text>
+  </g>
+  <rect x="210" y="345" width="350" height="58" rx="8" fill="#eef8fb" stroke="#2db7d3"/>
+  <text x="385" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#22313f">Candidate group A</text>
+  <rect x="660" y="345" width="350" height="58" rx="8" fill="#fff1e8" stroke="#f26d21"/>
+  <text x="835" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#22313f">Candidate group B</text>
+  <text x="600" y="515" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#52616f">The central correlated groups are kept; obvious side/noise fragments can be ignored or brushed out.</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">343 Louvain community placeholder</title>
+  <desc id="desc">Placeholder for Louvain community detection on the 342/343 fragment network.</desc>
+  <rect width="900" height="520" fill="#f8fafc"/>
+  <rect x="24" y="24" width="852" height="472" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="450" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0f172a">Louvain communities</text>
+  <text x="450" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#475569">Finding dense communities in the weighted 342/343 network</text>
+  <g stroke="#64748b" stroke-width="4" opacity="0.8">
+    <line x1="300" y1="225" x2="385" y2="175"/>
+    <line x1="385" y1="175" x2="470" y2="225"/>
+    <line x1="470" y1="225" x2="300" y2="225"/>
+    <line x1="520" y1="300" x2="610" y2="250"/>
+    <line x1="610" y1="250" x2="700" y2="315"/>
+    <line x1="700" y1="315" x2="520" y2="300"/>
+    <line x1="470" y1="225" x2="520" y2="300" stroke-dasharray="10 8" opacity="0.55"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">
+    <circle cx="300" cy="225" r="32" fill="#38bdf8"/>
+    <text x="300" y="231" fill="#082f49">80.0</text>
+    <circle cx="385" cy="175" r="32" fill="#38bdf8"/>
+    <text x="385" y="181" fill="#082f49">102.1</text>
+    <circle cx="470" cy="225" r="32" fill="#38bdf8"/>
+    <text x="470" y="231" fill="#082f49">108.1</text>
+    <circle cx="520" cy="300" r="32" fill="#fbbf24"/>
+    <text x="520" y="306" fill="#451a03">123.0</text>
+    <circle cx="610" cy="250" r="32" fill="#fbbf24"/>
+    <text x="610" y="256" fill="#451a03">153.1</text>
+    <circle cx="700" cy="315" r="32" fill="#fbbf24"/>
+    <text x="700" y="321" fill="#451a03">343.1</text>
+  </g>
+  <text x="450" y="444" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#475569">Replace with Find Louvain result for the 342/343 example</text>
+</svg>
