@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">343 hierarchical subgroup placeholder</title>
+  <desc id="desc">Placeholder for hierarchical subgrouping of the 342/343 fragment network.</desc>
+  <rect width="900" height="520" fill="#f8fafc"/>
+  <rect x="24" y="24" width="852" height="472" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="450" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0f172a">Hierarchical subgroups</text>
+  <text x="450" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#475569">Splitting one connected 342/343 group by profile-shape distance</text>
+  <g stroke="#64748b" stroke-width="4" fill="none">
+    <path d="M180 375 V310 H285 V250 H390"/>
+    <path d="M285 310 H285 V250"/>
+    <path d="M390 250 V185 H520"/>
+    <path d="M520 185 V250 H650"/>
+    <path d="M650 250 V315 H760"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">
+    <circle cx="180" cy="375" r="30" fill="#38bdf8"/>
+    <text x="180" y="381" fill="#082f49">80.0</text>
+    <circle cx="390" cy="250" r="30" fill="#38bdf8"/>
+    <text x="390" y="256" fill="#082f49">102.1</text>
+    <circle cx="520" cy="185" r="30" fill="#fbbf24"/>
+    <text x="520" y="191" fill="#451a03">123.0</text>
+    <circle cx="650" cy="250" r="30" fill="#fbbf24"/>
+    <text x="650" y="256" fill="#451a03">153.1</text>
+    <circle cx="760" cy="315" r="30" fill="#fbbf24"/>
+    <text x="760" y="321" fill="#451a03">343.1</text>
+  </g>
+  <text x="450" y="444" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#475569">Replace with Find Subgroups result for the 342/343 example</text>
+</svg>

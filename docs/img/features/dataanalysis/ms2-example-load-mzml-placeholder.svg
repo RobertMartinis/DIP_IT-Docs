@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-label="Example mzML loading placeholder">
+  <rect width="1200" height="620" fill="#f5f7fa"/>
+  <rect x="44" y="42" width="1112" height="536" rx="12" fill="#ffffff" stroke="#c7d0d9" stroke-width="2"/>
+  <text x="600" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#22313f">Example workflow: load stepped mzML files</text>
+  <text x="600" y="122" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#52616f">Placeholder: replace with screenshot of the two example mzML files loaded in DIP_IT</text>
+  <rect x="120" y="175" width="960" height="300" rx="8" fill="#fbfcfd" stroke="#d8dee6"/>
+  <text x="170" y="225" font-family="Arial, sans-serif" font-size="19" fill="#22313f">File list</text>
+  <line x1="150" y1="255" x2="1050" y2="255" stroke="#d8dee6" stroke-width="2"/>
+  <text x="170" y="300" font-family="Consolas, monospace" font-size="18" fill="#52616f">example_180_stepped.mzML</text>
+  <text x="170" y="345" font-family="Consolas, monospace" font-size="18" fill="#52616f">example_342_stepped.mzML</text>
+  <text x="170" y="405" font-family="Arial, sans-serif" font-size="17" fill="#52616f">Scan filters contain stepped MS/MS centers across a narrow m/z range.</text>
+  <rect x="160" y="505" width="880" height="42" rx="7" fill="#eef2f7" stroke="#c7d0d9"/>
+  <text x="600" y="532" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#52616f">Start by opening the spectrum viewer and selecting the stepped scan filter block.</text>
+</svg>

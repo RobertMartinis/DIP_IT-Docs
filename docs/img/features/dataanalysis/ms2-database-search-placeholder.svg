@@ -8,7 +8,7 @@
     <text x="95" y="230">Fragment unit</text>
     <text x="95" y="280">Fragment tolerance</text>
     <text x="95" y="330">Similarity mode</text>
-    <text x="95" y="380">Minimum ion intensity</text>
+    <text x="95" y="380">Relative TIC threshold</text>
     <text x="95" y="430">Top N peaks</text>
   </g>
   <g fill="#eef3f7" stroke="#d8e0e8">

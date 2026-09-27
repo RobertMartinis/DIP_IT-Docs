@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">343 profile overlap placeholder</title>
+  <desc id="desc">Placeholder for overlapping stepped intensity profiles in the 342/343 isobaric example.</desc>
+  <rect width="900" height="520" fill="#f8fafc"/>
+  <rect x="24" y="24" width="852" height="472" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="450" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#0f172a">Overlapping stepped profiles</text>
+  <text x="450" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#475569">Very close isobars can rise and fall almost together</text>
+  <line x1="110" y1="420" x2="790" y2="420" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="110" y1="140" x2="110" y2="420" stroke="#94a3b8" stroke-width="2"/>
+  <polyline fill="none" stroke="#2563eb" stroke-width="5" points="120,405 175,380 230,320 285,230 340,175 395,150 450,155 505,190 560,260 615,340 670,395 725,415"/>
+  <polyline fill="none" stroke="#f97316" stroke-width="5" points="120,415 175,390 230,335 285,245 340,185 395,155 450,150 505,180 560,245 615,325 670,385 725,410"/>
+  <text x="690" y="170" font-family="Arial, sans-serif" font-size="18" fill="#2563eb">342A-like profile</text>
+  <text x="690" y="200" font-family="Arial, sans-serif" font-size="18" fill="#f97316">342B-like profile</text>
+  <text x="450" y="464" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#475569">Replace with profile plot showing why this case is harder than 180</text>
+</svg>
